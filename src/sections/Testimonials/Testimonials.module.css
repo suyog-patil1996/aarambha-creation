@@ -1,0 +1,62 @@
+.swiper {
+  padding-bottom: var(--space-12);
+}
+
+.card {
+  height: 100%;
+  padding: var(--space-8);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  background-color: var(--color-bg-primary);
+}
+
+.rating {
+  display: flex;
+  gap: 0.15rem;
+  color: var(--color-accent);
+  font-size: var(--fs-sm);
+  margin-bottom: var(--space-4);
+}
+
+.quote {
+  font-size: var(--fs-base);
+  color: var(--color-text-primary);
+  margin-bottom: var(--space-6);
+}
+
+.author {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.avatar,
+.avatarPlaceholder {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-full);
+  object-fit: cover;
+}
+
+.avatarPlaceholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--color-primary-light), var(--color-secondary));
+  color: var(--color-text-inverse);
+  font-weight: var(--fw-bold);
+}
+
+.name {
+  font-weight: var(--fw-semibold);
+  font-size: var(--fs-sm);
+}
+
+.role {
+  font-size: var(--fs-xs);
+  color: var(--color-text-muted);
+}
+
+.swiper :global(.swiper-pagination-bullet-active) {
+  background-color: var(--color-primary);
+}

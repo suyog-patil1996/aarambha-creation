@@ -1,0 +1,77 @@
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-3);
+  margin-bottom: var(--space-10);
+}
+
+.filterBtn {
+  padding: 0.5rem 1.25rem;
+  border-radius: var(--radius-full);
+  border: 1px solid var(--color-border-dark);
+  background-color: transparent;
+  color: var(--color-text-secondary);
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-medium);
+  transition: background-color var(--transition-fast), color var(--transition-fast), border-color var(--transition-fast);
+}
+
+.filterBtn:hover {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
+
+.active {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+  color: var(--color-text-inverse);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--space-8);
+}
+
+.imageWrap {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background-color: var(--color-gray-100);
+}
+
+.imageWrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.placeholder {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, var(--color-primary-light), var(--color-secondary));
+}
+
+.badge {
+  position: absolute;
+  top: var(--space-3);
+  left: var(--space-3);
+  padding: 0.25rem 0.75rem;
+  border-radius: var(--radius-full);
+  background-color: rgba(255, 255, 255, 0.9);
+  color: var(--color-text-primary);
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-medium);
+}
+
+.item h3 {
+  margin-top: var(--space-4);
+  font-size: var(--fs-lg);
+}
+
+.item p {
+  margin-top: var(--space-1);
+  font-size: var(--fs-sm);
+}

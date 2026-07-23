@@ -1,0 +1,98 @@
+html {
+  font-size: 100%;
+}
+
+body {
+  font-family: var(--font-body);
+  font-size: var(--fs-base);
+  font-weight: var(--fw-regular);
+  line-height: var(--lh-normal);
+  color: var(--color-text-primary);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading);
+  font-weight: var(--fw-bold);
+  line-height: var(--lh-tight);
+  letter-spacing: var(--ls-tight);
+  color: var(--color-text-primary);
+}
+
+h1 {
+  font-size: clamp(2.25rem, 1.6rem + 2.5vw, var(--fs-6xl));
+}
+
+h2 {
+  font-size: clamp(1.875rem, 1.4rem + 1.8vw, var(--fs-5xl));
+}
+
+h3 {
+  font-size: clamp(1.5rem, 1.2rem + 1.2vw, var(--fs-3xl));
+}
+
+h4 {
+  font-size: clamp(1.25rem, 1.05rem + 0.7vw, var(--fs-2xl));
+}
+
+h5 {
+  font-size: var(--fs-xl);
+}
+
+h6 {
+  font-size: var(--fs-lg);
+}
+
+p {
+  font-size: var(--fs-base);
+  line-height: var(--lh-relaxed);
+  color: var(--color-text-secondary);
+}
+
+small {
+  font-size: var(--fs-sm);
+}
+
+strong,
+b {
+  font-weight: var(--fw-semibold);
+}
+
+a {
+  color: var(--color-text-link);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+a:hover {
+  color: var(--color-primary-dark);
+}
+
+ul,
+ol {
+  line-height: var(--lh-relaxed);
+}
+
+blockquote {
+  border-left: 3px solid var(--color-primary);
+  padding-left: var(--space-4);
+  font-style: italic;
+  color: var(--color-text-secondary);
+}
+
+code {
+  font-family: 'Courier New', monospace;
+  font-size: 0.9em;
+  background: var(--color-gray-100);
+  padding: 0.15em 0.4em;
+  border-radius: var(--radius-sm);
+}
+
+::selection {
+  background: var(--color-primary);
+  color: var(--color-text-inverse);
+}

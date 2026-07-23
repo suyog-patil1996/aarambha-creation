@@ -1,0 +1,29 @@
+.section {
+  background-color: var(--color-secondary);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-8);
+  text-align: center;
+}
+
+.value {
+  font-family: var(--font-heading);
+  font-size: var(--fs-4xl);
+  font-weight: var(--fw-bold);
+  color: var(--color-text-inverse);
+}
+
+.label {
+  margin-top: var(--space-2);
+  font-size: var(--fs-sm);
+  color: var(--color-gray-300);
+}
+
+@media (min-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}

@@ -1,0 +1,67 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: var(--space-8);
+}
+
+.card {
+  text-align: center;
+}
+
+.photoWrap {
+  aspect-ratio: 1;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  margin-bottom: var(--space-4);
+}
+
+.photoWrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--color-primary-light), var(--color-secondary));
+  color: var(--color-text-inverse);
+  font-size: var(--fs-3xl);
+  font-weight: var(--fw-bold);
+}
+
+.card h3 {
+  font-size: var(--fs-lg);
+}
+
+.card p {
+  font-size: var(--fs-sm);
+  margin-top: var(--space-1);
+}
+
+.social {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-3);
+  margin-top: var(--space-3);
+}
+
+.social a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-full);
+  background-color: var(--color-gray-100);
+  color: var(--color-text-secondary);
+  transition: background-color var(--transition-fast), color var(--transition-fast);
+}
+
+.social a:hover {
+  background-color: var(--color-primary);
+  color: var(--color-text-inverse);
+}

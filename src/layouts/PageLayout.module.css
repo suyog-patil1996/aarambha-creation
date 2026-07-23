@@ -1,0 +1,11 @@
+.pageHeader {
+  background-color: var(--color-bg-secondary);
+  padding-block: var(--space-16);
+  text-align: center;
+}
+
+.pageHeader p {
+  max-width: 640px;
+  margin-inline: auto;
+  margin-top: var(--space-3);
+}

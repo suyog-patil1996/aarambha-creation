@@ -1,0 +1,21 @@
+.button {
+  position: fixed;
+  bottom: var(--space-6);
+  left: var(--space-6);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border-radius: var(--radius-full);
+  background-color: var(--color-primary);
+  color: var(--color-text-inverse);
+  font-size: var(--fs-xl);
+  box-shadow: var(--shadow-lg);
+  transition: transform var(--transition-base);
+  z-index: var(--z-fixed);
+}
+
+.button:hover {
+  transform: scale(1.08);
+}
