@@ -1,25 +1,30 @@
 :root {
-  /* ============ BRAND COLORS ============ */
---color-primary: #FF5A3C;
---color-primary-light: #FF8566;
---color-primary-dark: #E0431F;
---color-primary-rgb: 255, 90, 60;
+  /* ============ BRAND COLORS (CMYK inspired) ============ */
+--color-primary: #2563EB;
+--color-primary-light: #3B82F6;
+--color-primary-dark: #1D4ED8;
+--color-primary-rgb: 37, 99, 235;
 
-  --color-secondary: #FF3C7D;
-  --color-secondary-light: #FF6B9E;
-  --color-secondary-dark: #E01F5C;
-  --color-secondary-rgb: 255, 60, 125;
+  --color-secondary: #06B6D4;
+  --color-secondary-light: #22D3EE;
+  --color-secondary-dark: #0891B2;
+  --color-secondary-rgb: 6, 182, 212;
 
-  --color-accent: #FFC93C;
---color-accent-light: #FFD66B;
---color-accent-dark: #E0A800;
-  --color-accent-rgb: 255, 201, 60;
+  --color-accent: #EC4899;
+--color-accent-light: #F472B6;
+--color-accent-dark: #DB2777;
+  --color-accent-rgb: 236, 72, 153;
+
+  --color-highlight: #FACC15;
+  --color-highlight-light: #FDE047;
+  --color-highlight-dark: #EAB308;
+  --color-highlight-rgb: 250, 204, 21;
 
   /* ============ BASE / SURFACE ============ */
-  --color-background: #FFF8F0;
-  --color-foreground: #1C1917;
-  --color-muted: #F5EBDC;
-  --color-muted-foreground: #726B62;
+  --color-background: #FFFFFF;
+  --color-foreground: #0F172A;
+  --color-muted: #F8FAFC;
+  --color-muted-foreground: #64748B;
 
   /* ============ NEUTRALS ============ */
   --color-white: #ffffff;
@@ -53,19 +58,19 @@
   --color-bg-primary: var(--color-background);
   --color-bg-secondary: var(--color-muted);
   --color-bg-dark: var(--color-foreground);
-  --color-bg-overlay: rgba(28, 25, 23, 0.6);
+  --color-bg-overlay: rgba(15, 23, 42, 0.6);
 
   /* ============ BORDER ============ */
-  --color-border: #D9D9D9;
-  --color-border-dark: #B3B3B3;
+  --color-border: #E2E8F0;
+  --color-border-dark: #CBD5E1;
   --border-thin: 2px;
   --border-md: 4px;
   --border-thick: 8px;
 
   /* ============ TYPOGRAPHY ============ */
-  --font-heading: 'Space Grotesk', 'Inter', sans-serif;
+  --font-heading: 'Outfit', 'Inter', sans-serif;
   --font-body: 'Inter', sans-serif;
-  --font-mono: 'Space Mono', 'Courier New', monospace;
+  --font-mono: 'Inter', sans-serif;
   --font-serif: 'Playfair Display', Georgia, serif;
 
   --fs-xs: 0.75rem;
@@ -145,7 +150,7 @@
   --btn-radius: 0px;
   --btn-padding-y: 0.75rem;
   --btn-padding-x: 1.75rem;
-  --btn-font-weight: var(--fw-bold);
+  --btn-font-weight: var(--fw-semibold);
   --btn-font-size: var(--fs-base);
 
   /* ============ TRANSITIONS ============ */
