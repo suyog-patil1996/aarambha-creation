@@ -33,7 +33,7 @@
   position: absolute;
   inset: 0;
   background: linear-gradient(180deg, rgba(15, 23, 42, 0.35) 0%, rgba(15, 23, 42, 0.8) 100%),
-    linear-gradient(120deg, rgba(37, 99, 235, 0.28) 0%, rgba(236, 72, 153, 0.22) 100%);
+    linear-gradient(120deg, rgba(var(--color-primary-rgb), 0.28) 0%, rgba(var(--color-secondary-rgb), 0.22) 100%);
 }
 
 .inner {
