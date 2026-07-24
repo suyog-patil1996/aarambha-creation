@@ -71,11 +71,13 @@
   font-family: var(--font-mono);
   font-size: var(--fs-md);
   line-height: var(--lh-relaxed);
-  color: rgba(255, 255, 255, 0.88);
+  color: rgba(255, 255, 255, 0.92);
   padding: var(--space-3) var(--space-5);
   border-left: var(--border-thick) solid var(--color-primary);
-  background: rgba(0, 0, 0, 0.25);
-  backdrop-filter: blur(4px);
+  background: var(--glass-bg-dark);
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  backdrop-filter: var(--glass-blur-sm);
+  -webkit-backdrop-filter: var(--glass-blur-sm);
 }
 
 .actions {
@@ -99,9 +101,12 @@
   flex-direction: column;
   gap: var(--space-1);
   text-align: center;
-  background: var(--color-white);
-  border: var(--border-thick) solid var(--color-foreground);
-  box-shadow: var(--shadow-md);
+  background: var(--glass-bg-strong);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md), var(--glass-shadow-inset);
+  backdrop-filter: var(--glass-blur-md);
+  -webkit-backdrop-filter: var(--glass-blur-md);
   padding: var(--space-4) var(--space-5);
 }
 

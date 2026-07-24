@@ -18,9 +18,12 @@
 .swiper :global(.swiper-button-prev) {
   width: 44px;
   height: 44px;
-  background-color: var(--color-bg-primary);
+  background: var(--glass-bg-strong);
+  border: 1px solid var(--glass-border);
   border-radius: var(--radius-full);
-  box-shadow: var(--shadow-md);
+  box-shadow: var(--shadow-md), var(--glass-shadow-inset);
+  backdrop-filter: var(--glass-blur-md);
+  -webkit-backdrop-filter: var(--glass-blur-md);
   color: var(--color-text-primary);
 }
 

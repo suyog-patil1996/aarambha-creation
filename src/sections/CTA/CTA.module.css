@@ -1,6 +1,6 @@
 .cta {
-  background-color: var(--color-primary);
-  border-top: var(--border-thick) solid var(--color-foreground);
+  background: linear-gradient(120deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+  border-top: 1px solid var(--glass-border-dark);
 }
 
 .inner {

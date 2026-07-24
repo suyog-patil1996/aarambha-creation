@@ -8,10 +8,13 @@
   width: 56px;
   height: 56px;
   border-radius: var(--radius-full);
+  border: 1px solid var(--glass-border);
   background-color: #25d366;
   color: var(--color-white);
   font-size: var(--fs-2xl);
-  box-shadow: var(--shadow-lg);
+  box-shadow: var(--shadow-lg), var(--glass-shadow-inset);
+  backdrop-filter: var(--glass-blur-sm);
+  -webkit-backdrop-filter: var(--glass-blur-sm);
   transition: transform var(--transition-base);
   z-index: var(--z-fixed);
 }
