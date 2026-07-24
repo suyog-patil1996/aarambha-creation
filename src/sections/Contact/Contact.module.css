@@ -3,9 +3,12 @@
   grid-template-columns: 1fr;
   gap: var(--space-8);
   padding: var(--space-5);
-  border: var(--border-thin) solid var(--color-foreground);
-  background-color: var(--color-white);
-  box-shadow: var(--shadow-md);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-xl);
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur-md);
+  -webkit-backdrop-filter: var(--glass-blur-md);
+  box-shadow: var(--shadow-md), var(--glass-shadow-inset);
 }
 
 .info {
@@ -38,6 +41,7 @@
 .success {
   padding: var(--space-3) var(--space-4);
   border: var(--border-thin) solid var(--color-success);
+  border-radius: var(--radius-md);
   background-color: rgba(22, 163, 74, 0.1);
   color: var(--color-success);
   font-size: var(--fs-sm);
@@ -47,8 +51,7 @@
   .grid {
     gap: var(--space-12);
     padding: var(--space-12);
-    border-width: var(--border-thick);
-    box-shadow: var(--shadow-lg);
+    box-shadow: var(--shadow-lg), var(--glass-shadow-inset);
   }
 }
 

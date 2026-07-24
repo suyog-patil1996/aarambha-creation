@@ -1,4 +1,5 @@
 .btn {
+  position: relative;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -10,11 +11,32 @@
   text-transform: uppercase;
   letter-spacing: var(--ls-wide);
   border-radius: var(--btn-radius);
-  border: 2px solid transparent;
+  border: 1px solid transparent;
   line-height: 1;
   white-space: nowrap;
+  overflow: hidden;
+  isolation: isolate;
   transition: background-color var(--transition-base), border-color var(--transition-base),
     color var(--transition-base), transform var(--transition-base), box-shadow var(--transition-base);
+}
+
+/* Specular highlight strip across the top of the pill, the "glass" glint.
+   Absolutely-positioned elements paint above in-flow inline content regardless
+   of z-index, so the label span is bumped into its own stacking context below
+   to stay on top and legible. */
+.btn::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.35) 0%, rgba(255, 255, 255, 0) 55%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.btn > span {
+  position: relative;
+  z-index: 2;
 }
 
 .btn:hover {
@@ -34,39 +56,48 @@
 .primary {
   background-color: var(--color-primary);
   color: var(--color-text-inverse);
+  box-shadow: var(--shadow-sm);
 }
 
 .primary:hover {
   background-color: var(--color-primary-dark);
+  color: var(--color-text-inverse);
   box-shadow: var(--shadow-primary);
 }
 
 .secondary {
   background-color: var(--color-secondary);
   color: var(--color-text-inverse);
+  box-shadow: var(--shadow-sm);
 }
 
 .secondary:hover {
   background-color: var(--color-secondary-light);
+  color: var(--color-text-inverse);
 }
 
 .accent {
   background-color: var(--color-accent);
   color: var(--color-foreground);
+  box-shadow: var(--shadow-sm);
 }
 
 .accent:hover {
   background-color: var(--color-accent-dark);
+  color: var(--color-foreground);
 }
 
 .outline {
-  background-color: transparent;
-  border-color: var(--color-primary);
-  color: var(--color-primary);
+  background: var(--glass-bg-dark);
+  border-color: rgba(255, 255, 255, 0.5);
+  color: var(--color-white);
+  backdrop-filter: var(--glass-blur-sm);
+  -webkit-backdrop-filter: var(--glass-blur-sm);
 }
 
 .outline:hover {
   background-color: var(--color-primary);
+  border-color: var(--color-primary);
   color: var(--color-text-inverse);
 }
 
@@ -76,7 +107,10 @@
 }
 
 .ghost:hover {
-  background-color: var(--color-gray-100);
+  background: var(--glass-bg-subtle);
+  color: var(--color-text-primary);
+  backdrop-filter: var(--glass-blur-sm);
+  -webkit-backdrop-filter: var(--glass-blur-sm);
 }
 
 /* Sizes */

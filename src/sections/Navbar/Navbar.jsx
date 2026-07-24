@@ -69,7 +69,9 @@ function Navbar() {
   const handleNavClick = (event, to) => {
     handleAnchorClick(event, to);
     setIsOpen(false);
-    if (to !== '/' && location.pathname === '/') {
+    if (to === '/') {
+      setActiveSection('');
+    } else if (location.pathname === '/') {
       setActiveSection(to.slice(1));
     }
   };

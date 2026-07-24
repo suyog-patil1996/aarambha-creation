@@ -9,8 +9,10 @@
 .filterBtn {
   padding: 0.5rem 1.25rem;
   border-radius: var(--radius-full);
-  border: var(--border-thin) solid var(--color-foreground);
-  background-color: transparent;
+  border: var(--border-thin) solid var(--glass-border);
+  background: var(--glass-bg-subtle);
+  backdrop-filter: var(--glass-blur-sm);
+  -webkit-backdrop-filter: var(--glass-blur-sm);
   color: var(--color-text-secondary);
   font-family: var(--font-mono);
   font-size: var(--fs-xs);
@@ -40,7 +42,9 @@
 .imageWrap {
   position: relative;
   aspect-ratio: 4 / 3;
-  border: var(--border-thick) solid var(--color-foreground);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
   overflow: hidden;
   background-color: var(--color-gray-100);
 }
@@ -70,8 +74,10 @@
   left: var(--space-3);
   padding: 0.25rem 0.75rem;
   border-radius: var(--radius-full);
-  border: var(--border-thin) solid var(--color-foreground);
-  background-color: rgba(255, 255, 255, 0.92);
+  border: var(--border-thin) solid var(--glass-border);
+  background: var(--glass-bg-strong);
+  backdrop-filter: var(--glass-blur-sm);
+  -webkit-backdrop-filter: var(--glass-blur-sm);
   color: var(--color-text-primary);
   font-family: var(--font-mono);
   font-size: var(--fs-xs);

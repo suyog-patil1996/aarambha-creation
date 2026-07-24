@@ -8,7 +8,8 @@
   transition:
     background-color 0.35s ease,
     backdrop-filter 0.35s ease,
-    border-color 0.35s ease;
+    border-color 0.35s ease,
+    box-shadow 0.35s ease;
 }
 
 .transparent {
@@ -16,9 +17,11 @@
 }
 
 .scrolled {
-  background-color: rgba(249, 248, 245, 0.92);
-  backdrop-filter: blur(12px);
-  border-bottom-color: var(--color-foreground);
+  background-color: var(--glass-bg-strong);
+  backdrop-filter: var(--glass-blur-md);
+  -webkit-backdrop-filter: var(--glass-blur-md);
+  border-bottom-color: var(--glass-border);
+  box-shadow: var(--shadow-sm);
 }
 
 .inner {
@@ -109,8 +112,11 @@
     align-items: flex-start;
     gap: var(--space-6);
     padding: var(--space-8) var(--container-padding);
-    background-color: var(--color-background);
-    border-left: var(--border-md) solid var(--color-foreground);
+    background: var(--glass-bg-strong);
+    backdrop-filter: var(--glass-blur-lg);
+    -webkit-backdrop-filter: var(--glass-blur-lg);
+    border-left: var(--border-md) solid var(--glass-border);
+    box-shadow: var(--shadow-lg);
     transform: translateX(100%);
     transition: transform var(--transition-base);
     overflow-y: auto;

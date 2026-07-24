@@ -21,10 +21,29 @@
   --color-highlight-rgb: 250, 204, 21;
 
   /* ============ BASE / SURFACE ============ */
-  --color-background: #FFFFFF;
+  --color-background: #F3F6FC;
   --color-foreground: #0F172A;
   --color-muted: #F8FAFC;
   --color-muted-foreground: #64748B;
+
+  /* ============ LIQUID GLASS SURFACES ============ */
+  --glass-bg: rgba(255, 255, 255, 0.55);
+  --glass-bg-strong: rgba(255, 255, 255, 0.72);
+  --glass-bg-subtle: rgba(255, 255, 255, 0.35);
+  --glass-bg-dark: rgba(15, 23, 42, 0.45);
+  --glass-border: rgba(255, 255, 255, 0.6);
+  --glass-border-dark: rgba(255, 255, 255, 0.18);
+  --glass-highlight: rgba(255, 255, 255, 0.85);
+  --glass-blur-sm: blur(8px) saturate(160%);
+  --glass-blur-md: blur(18px) saturate(180%);
+  --glass-blur-lg: blur(32px) saturate(180%);
+  --glass-shadow-inset: inset 0 1px 1px rgba(255, 255, 255, 0.5), inset 0 -1px 1px rgba(255, 255, 255, 0.1);
+
+  /* Ambient gradient mesh used behind glass surfaces */
+  --gradient-mesh: radial-gradient(circle at 12% 8%, rgba(37, 99, 235, 0.25), transparent 45%),
+    radial-gradient(circle at 88% 15%, rgba(236, 72, 153, 0.22), transparent 45%),
+    radial-gradient(circle at 25% 90%, rgba(6, 182, 212, 0.22), transparent 50%),
+    radial-gradient(circle at 90% 85%, rgba(250, 204, 21, 0.16), transparent 45%);
 
   /* ============ NEUTRALS ============ */
   --color-white: #ffffff;
@@ -63,9 +82,9 @@
   /* ============ BORDER ============ */
   --color-border: #E2E8F0;
   --color-border-dark: #CBD5E1;
-  --border-thin: 2px;
-  --border-md: 4px;
-  --border-thick: 8px;
+  --border-thin: 1px;
+  --border-md: 1px;
+  --border-thick: 3px;
 
   /* ============ TYPOGRAPHY ============ */
   --font-heading: 'Outfit', 'Inter', sans-serif;
@@ -121,21 +140,21 @@
   --section-padding-y: var(--space-24);
   --section-padding-y-sm: var(--space-16);
 
-  /* ============ BORDER RADIUS (sharp, neo-brutalist) ============ */
-  --radius-sm: 0px;
-  --radius-md: 0px;
-  --radius-lg: 0px;
-  --radius-xl: 0px;
-  --radius-2xl: 0px;
+  /* ============ BORDER RADIUS (liquid glass, soft/rounded) ============ */
+  --radius-sm: 12px;
+  --radius-md: 18px;
+  --radius-lg: 24px;
+  --radius-xl: 32px;
+  --radius-2xl: 40px;
   --radius-full: 9999px;
 
-  /* ============ SHADOWS (hard offset, no blur) ============ */
-  --shadow-sm: 4px 4px 0 0 var(--color-foreground);
-  --shadow-md: 6px 6px 0 0 var(--color-foreground);
-  --shadow-lg: 8px 8px 0 0 var(--color-foreground);
-  --shadow-xl: 12px 12px 0 0 var(--color-foreground);
-  --shadow-2xl: 16px 16px 0 0 var(--color-foreground);
-  --shadow-primary: 6px 6px 0 0 var(--color-primary);
+  /* ============ SHADOWS (soft, diffused, glass depth) ============ */
+  --shadow-sm: 0 2px 8px rgba(15, 23, 42, 0.06), 0 1px 2px rgba(15, 23, 42, 0.04);
+  --shadow-md: 0 8px 24px rgba(15, 23, 42, 0.10), 0 2px 6px rgba(15, 23, 42, 0.06);
+  --shadow-lg: 0 16px 40px rgba(15, 23, 42, 0.14), 0 4px 12px rgba(15, 23, 42, 0.08);
+  --shadow-xl: 0 24px 56px rgba(15, 23, 42, 0.18), 0 8px 20px rgba(15, 23, 42, 0.10);
+  --shadow-2xl: 0 32px 72px rgba(15, 23, 42, 0.22), 0 12px 28px rgba(15, 23, 42, 0.12);
+  --shadow-primary: 0 12px 32px rgba(37, 99, 235, 0.35);
 
   /* ============ CONTAINER ============ */
   --container-sm: 640px;
@@ -147,7 +166,7 @@
   --container-padding-mobile: var(--space-4);
 
   /* ============ BUTTON ============ */
-  --btn-radius: 0px;
+  --btn-radius: var(--radius-full);
   --btn-padding-y: 0.75rem;
   --btn-padding-x: 1.75rem;
   --btn-font-weight: var(--fw-semibold);

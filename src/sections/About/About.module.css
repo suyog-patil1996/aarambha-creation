@@ -21,9 +21,11 @@
   content: '';
   position: absolute;
   inset: 0;
-  background: var(--color-secondary);
-  border: var(--border-thin) solid var(--color-foreground);
-  transform: translate(var(--space-4), var(--space-4));
+  background: linear-gradient(135deg, var(--color-secondary), var(--color-primary));
+  filter: blur(28px);
+  opacity: 0.5;
+  border-radius: var(--radius-xl);
+  transform: translate(var(--space-4), var(--space-4)) scale(0.96);
   z-index: -1;
 }
 
@@ -32,7 +34,9 @@
   width: 100%;
   aspect-ratio: 4 / 3;
   object-fit: cover;
-  border: var(--border-thick) solid var(--color-foreground);
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--shadow-lg);
 }
 
 .tag {
