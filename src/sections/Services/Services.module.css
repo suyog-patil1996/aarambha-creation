@@ -39,7 +39,7 @@
   margin-bottom: var(--space-5);
   border-radius: var(--radius-full);
   border: 1px solid var(--glass-border);
-  background: linear-gradient(135deg, var(--color-accent-light), var(--color-accent));
+  background: linear-gradient(135deg, #ff7a45, #ff4d00);
   box-shadow: var(--shadow-sm);
   color: var(--color-foreground);
   font-size: var(--fs-xl);

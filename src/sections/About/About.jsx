@@ -31,9 +31,11 @@ function About({
             {tag}
           </motion.span>
           <motion.h2 variants={fadeUp}>{title}</motion.h2>
-          <motion.p variants={fadeUp} className={styles.description}>
-            {description}
-          </motion.p>
+          {(Array.isArray(description) ? description : [description]).map((paragraph) => (
+            <motion.p key={paragraph} variants={fadeUp} className={styles.description}>
+              {paragraph}
+            </motion.p>
+          ))}
           {features.length > 0 && (
             <motion.ul variants={fadeUp} className={styles.features}>
               {features.map((feature) => (

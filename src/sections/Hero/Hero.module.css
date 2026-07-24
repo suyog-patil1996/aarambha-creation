@@ -68,7 +68,7 @@
 .subtitle {
   margin-top: var(--space-6);
   max-width: 46ch;
-  font-family: var(--font-mono);
+  font-family: 'Poppins', sans-serif;
   font-size: var(--fs-md);
   line-height: var(--lh-relaxed);
   color: rgba(255, 255, 255, 0.92);
