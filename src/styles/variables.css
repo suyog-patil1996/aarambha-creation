@@ -1,18 +1,18 @@
 :root {
   /* ============ BRAND COLORS ============ */
-  --color-primary: #4f46e5;
-  --color-primary-light: #6366f1;
-  --color-primary-dark: #4338ca;
-  --color-primary-rgb: 79, 70, 229;
+--color-primary: #E43D84;
+--color-primary-light: #EC6AA3;
+--color-primary-dark: #C82669;
+--color-primary-rgb: 228,61,132;
 
   --color-secondary: #0f172a;
   --color-secondary-light: #1e293b;
   --color-secondary-dark: #020617;
   --color-secondary-rgb: 15, 23, 42;
 
-  --color-accent: #f59e0b;
-  --color-accent-light: #fbbf24;
-  --color-accent-dark: #d97706;
+  --color-accent: #F5C14C;
+--color-accent-light: #FFD770;
+--color-accent-dark: #E3AF28;
   --color-accent-rgb: 245, 158, 11;
 
   /* ============ NEUTRALS ============ */
@@ -54,8 +54,8 @@
   --color-border-dark: var(--color-gray-300);
 
   /* ============ TYPOGRAPHY ============ */
-  --font-heading: 'Poppins', 'Segoe UI', system-ui, -apple-system, sans-serif;
-  --font-body: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
+  --font-heading:'Playfair Display', serif;
+  --font-body:'Poppins',sans-serif;
 
   --fs-xs: 0.75rem;
   --fs-sm: 0.875rem;
@@ -114,7 +114,7 @@
   /* ============ SHADOWS ============ */
   --shadow-sm: 0 1px 2px rgba(15, 23, 42, 0.06);
   --shadow-md: 0 4px 12px rgba(15, 23, 42, 0.08);
-  --shadow-lg: 0 8px 24px rgba(15, 23, 42, 0.1);
+  --shadow-lg:0 18px 45px rgba(0,0,0,.12);
   --shadow-xl: 0 16px 40px rgba(15, 23, 42, 0.12);
   --shadow-primary: 0 8px 24px rgba(var(--color-primary-rgb), 0.25);
 
@@ -128,7 +128,7 @@
   --container-padding-mobile: var(--space-4);
 
   /* ============ BUTTON ============ */
-  --btn-radius: var(--radius-md);
+  --btn-radius:999px;
   --btn-padding-y: 0.75rem;
   --btn-padding-x: 1.75rem;
   --btn-font-weight: var(--fw-semibold);

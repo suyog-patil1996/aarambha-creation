@@ -25,7 +25,11 @@ function Navbar() {
   }, [isOpen]);
 
   return (
-    <header className={`${styles.navbar} ${scrolled ? styles.scrolled : ''}`}>
+    <header
+  className={`${styles.navbar} ${
+    scrolled ? styles.scrolled : styles.transparent
+  }`}
+>
       <div className={`container ${styles.inner}`}>
         <NavLink to="/" className={styles.logo} onClick={() => setIsOpen(false)}>
           {COMPANY.name}

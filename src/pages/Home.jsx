@@ -13,17 +13,16 @@ function Home() {
 
   return (
     <>
-      <Hero />
-      <Services />
-      <About
-        features={['Dedicated project team', 'Transparent timelines', 'Ongoing support after launch']}
-      />
-      <Statistics />
-      <Portfolio />
-      <Testimonials />
-      <Partners />
-      <CTA />
-    </>
+  <Hero />
+
+  <About />
+
+  <Services />
+
+  <Portfolio />
+
+  <CTA />
+</>
   );
 }
 
