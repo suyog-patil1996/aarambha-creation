@@ -1,32 +1,80 @@
 .hero {
-  background: linear-gradient(135deg, var(--color-bg-secondary), var(--color-bg-primary));
-  padding-block: var(--space-32) var(--space-24);
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: flex-start;
+  padding-block: 96px var(--space-16);
+  overflow: hidden;
+  color: var(--color-white);
+}
+
+/* Matches the breakpoint where .badgeStart becomes visible below —
+   reserves fixed clearance so the title can never sit under the badge,
+   regardless of viewport height or how many lines the title wraps to. */
+@media (min-width: 768px) {
+  .hero {
+    padding-top: 260px;
+  }
+}
+
+.imageLayer {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.imageLayer img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(28, 25, 23, 0.35) 0%, rgba(28, 25, 23, 0.8) 100%),
+    linear-gradient(120deg, rgba(255, 90, 60, 0.3) 0%, rgba(255, 60, 125, 0.22) 100%);
 }
 
 .inner {
+  position: relative;
+  z-index: 1;
   display: grid;
   grid-template-columns: 1fr;
-  gap: var(--space-12);
-  align-items: center;
 }
 
 .content {
-  max-width: 640px;
+  max-width: 720px;
 }
 
 .eyebrow {
   display: inline-block;
   margin-bottom: var(--space-4);
+  font-family: var(--font-mono);
   font-size: var(--fs-sm);
-  font-weight: var(--fw-semibold);
-  letter-spacing: var(--ls-wide);
+  font-weight: var(--fw-bold);
+  letter-spacing: var(--ls-widest);
   text-transform: uppercase;
-  color: var(--color-primary);
+  color: var(--color-accent);
+}
+
+.title {
+  font-size: clamp(2.75rem, 1.5rem + 6vw, 7rem);
+  line-height: 0.95;
+  color: var(--color-white);
 }
 
 .subtitle {
-  margin-top: var(--space-4);
+  margin-top: var(--space-6);
+  max-width: 46ch;
+  font-family: var(--font-mono);
   font-size: var(--fs-md);
+  line-height: var(--lh-relaxed);
+  color: rgba(255, 255, 255, 0.88);
+  padding: var(--space-3) var(--space-5);
+  border-left: var(--border-thick) solid var(--color-primary);
+  background: rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(4px);
 }
 
 .actions {
@@ -36,14 +84,55 @@
   margin-top: var(--space-8);
 }
 
-.imageWrap img {
-  width: 100%;
-  border-radius: var(--radius-xl);
-  box-shadow: var(--shadow-xl);
+.badges {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
 }
 
-@media (min-width: 1024px) {
-  .inner {
-    grid-template-columns: 1fr 1fr;
+.badge {
+  position: absolute;
+  pointer-events: auto;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  text-align: center;
+  background: var(--color-white);
+  border: var(--border-thick) solid var(--color-foreground);
+  box-shadow: var(--shadow-md);
+  padding: var(--space-4) var(--space-5);
+}
+
+.badgeStart {
+  top: calc(80px + var(--space-8));
+  left: var(--space-6);
+}
+
+.badgeEnd {
+  bottom: var(--space-8);
+  right: var(--space-6);
+}
+
+.badgeValue {
+  font-family: var(--font-heading);
+  font-size: var(--fs-3xl);
+  font-weight: var(--fw-bold);
+  line-height: 1;
+  color: var(--color-primary);
+}
+
+.badgeLabel {
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-bold);
+  letter-spacing: var(--ls-wider);
+  text-transform: uppercase;
+  color: var(--color-foreground);
+}
+
+@media (max-width: 767px) {
+  .badges {
+    display: none;
   }
 }

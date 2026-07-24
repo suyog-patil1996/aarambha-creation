@@ -9,11 +9,14 @@
 .filterBtn {
   padding: 0.5rem 1.25rem;
   border-radius: var(--radius-full);
-  border: 1px solid var(--color-border-dark);
+  border: var(--border-thin) solid var(--color-foreground);
   background-color: transparent;
   color: var(--color-text-secondary);
-  font-size: var(--fs-sm);
-  font-weight: var(--fw-medium);
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-bold);
+  text-transform: uppercase;
+  letter-spacing: var(--ls-wide);
   transition: background-color var(--transition-fast), color var(--transition-fast), border-color var(--transition-fast);
 }
 
@@ -37,7 +40,7 @@
 .imageWrap {
   position: relative;
   aspect-ratio: 4 / 3;
-  border-radius: var(--radius-lg);
+  border: var(--border-thick) solid var(--color-foreground);
   overflow: hidden;
   background-color: var(--color-gray-100);
 }
@@ -46,6 +49,13 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+  filter: grayscale(1);
+  transition: filter 0.7s ease, transform 0.7s ease;
+}
+
+.item:hover .imageWrap img {
+  filter: grayscale(0);
+  transform: scale(1.04);
 }
 
 .placeholder {
@@ -60,10 +70,14 @@
   left: var(--space-3);
   padding: 0.25rem 0.75rem;
   border-radius: var(--radius-full);
-  background-color: rgba(255, 255, 255, 0.9);
+  border: var(--border-thin) solid var(--color-foreground);
+  background-color: rgba(255, 255, 255, 0.92);
   color: var(--color-text-primary);
+  font-family: var(--font-mono);
   font-size: var(--fs-xs);
-  font-weight: var(--fw-medium);
+  font-weight: var(--fw-bold);
+  text-transform: uppercase;
+  letter-spacing: var(--ls-wide);
 }
 
 .item h3 {

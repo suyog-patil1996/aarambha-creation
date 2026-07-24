@@ -4,14 +4,21 @@
   justify-content: center;
   gap: var(--space-2);
   padding: var(--btn-padding-y) var(--btn-padding-x);
+  font-family: var(--font-mono);
   font-weight: var(--btn-font-weight);
   font-size: var(--btn-font-size);
+  text-transform: uppercase;
+  letter-spacing: var(--ls-wide);
   border-radius: var(--btn-radius);
   border: 2px solid transparent;
   line-height: 1;
   white-space: nowrap;
   transition: background-color var(--transition-base), border-color var(--transition-base),
     color var(--transition-base), transform var(--transition-base), box-shadow var(--transition-base);
+}
+
+.btn:hover {
+  transform: translateY(-3px);
 }
 
 .btn:active {
@@ -45,7 +52,7 @@
 
 .accent {
   background-color: var(--color-accent);
-  color: var(--color-secondary);
+  color: var(--color-foreground);
 }
 
 .accent:hover {

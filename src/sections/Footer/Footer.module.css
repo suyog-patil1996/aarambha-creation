@@ -1,6 +1,7 @@
 .footer {
-  background-color: var(--color-secondary);
+  background-color: var(--color-foreground);
   color: var(--color-gray-300);
+  border-top: var(--border-thin) solid rgba(255, 255, 255, 0.15);
   padding-top: var(--space-20);
 }
 
@@ -15,6 +16,8 @@
   font-family: var(--font-heading);
   font-size: var(--fs-lg);
   font-weight: var(--fw-bold);
+  text-transform: uppercase;
+  letter-spacing: var(--ls-tight);
   color: var(--color-text-inverse);
 }
 
@@ -49,9 +52,10 @@
 
 .heading {
   color: var(--color-text-inverse);
+  font-family: var(--font-mono);
   font-size: var(--fs-sm);
-  font-weight: var(--fw-semibold);
-  letter-spacing: var(--ls-wide);
+  font-weight: var(--fw-bold);
+  letter-spacing: var(--ls-widest);
   text-transform: uppercase;
   margin-bottom: var(--space-5);
 }

@@ -17,9 +17,10 @@
 .tag {
   display: inline-block;
   margin-bottom: var(--space-3);
+  font-family: var(--font-mono);
   font-size: var(--fs-sm);
-  font-weight: var(--fw-semibold);
-  letter-spacing: var(--ls-wide);
+  font-weight: var(--fw-bold);
+  letter-spacing: var(--ls-widest);
   text-transform: uppercase;
   color: var(--color-primary);
 }

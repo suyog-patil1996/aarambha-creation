@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { FaFacebookF, FaInstagram, FaLinkedinIn, FaTwitter } from 'react-icons/fa';
+import useAnchorNav from '../../hooks/useAnchorNav';
 import { COMPANY } from '../../data/company';
 import { NAV_LINKS } from '../../data/navLinks';
 import styles from './Footer.module.css';
@@ -13,6 +14,7 @@ const SOCIAL_ICONS = {
 
 function Footer() {
   const year = new Date().getFullYear();
+  const { handleAnchorClick } = useAnchorNav();
 
   return (
     <footer className={styles.footer}>
@@ -20,17 +22,19 @@ function Footer() {
         <div className={styles.brand}>
           <p className={styles.logo}>{COMPANY.name}</p>
           <p className={styles.tagline}>{COMPANY.tagline}</p>
-          <div className={styles.social}>
-            {Object.entries(COMPANY.social).map(([platform, url]) => {
-              const Icon = SOCIAL_ICONS[platform];
-              if (!Icon) return null;
-              return (
-                <a key={platform} href={url} target="_blank" rel="noopener noreferrer" aria-label={platform}>
-                  <Icon />
-                </a>
-              );
-            })}
-          </div>
+          {Object.keys(COMPANY.social).length > 0 && (
+            <div className={styles.social}>
+              {Object.entries(COMPANY.social).map(([platform, url]) => {
+                const Icon = SOCIAL_ICONS[platform];
+                if (!Icon) return null;
+                return (
+                  <a key={platform} href={url} target="_blank" rel="noopener noreferrer" aria-label={platform}>
+                    <Icon />
+                  </a>
+                );
+              })}
+            </div>
+          )}
         </div>
 
         <div>
@@ -38,7 +42,12 @@ function Footer() {
           <ul className={styles.linkList}>
             {NAV_LINKS.map((link) => (
               <li key={link.to}>
-                <Link to={link.to}>{link.label}</Link>
+                <a
+                  href={link.to === '/' ? '/' : `/${link.to}`}
+                  onClick={(e) => handleAnchorClick(e, link.to)}
+                >
+                  {link.label}
+                </a>
               </li>
             ))}
           </ul>
@@ -65,7 +74,11 @@ function Footer() {
             <li>
               <a href={`tel:${COMPANY.phone}`}>{COMPANY.phone}</a>
             </li>
-            <li>{COMPANY.address}</li>
+            <li>
+              <a href={COMPANY.mapUrl} target="_blank" rel="noopener noreferrer">
+                {COMPANY.address}
+              </a>
+            </li>
           </ul>
         </div>
       </div>

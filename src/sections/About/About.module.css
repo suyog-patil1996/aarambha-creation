@@ -13,20 +13,35 @@
   direction: ltr;
 }
 
+.imageWrap {
+  position: relative;
+}
+
+.imageWrap::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--color-secondary);
+  border: var(--border-thin) solid var(--color-foreground);
+  transform: translate(var(--space-4), var(--space-4));
+  z-index: -1;
+}
+
 .imageWrap img {
+  position: relative;
   width: 100%;
   aspect-ratio: 4 / 3;
   object-fit: cover;
-  border-radius: var(--radius-xl);
-  box-shadow: var(--shadow-lg);
+  border: var(--border-thick) solid var(--color-foreground);
 }
 
 .tag {
   display: inline-block;
   margin-bottom: var(--space-3);
+  font-family: var(--font-mono);
   font-size: var(--fs-sm);
-  font-weight: var(--fw-semibold);
-  letter-spacing: var(--ls-wide);
+  font-weight: var(--fw-bold);
+  letter-spacing: var(--ls-widest);
   text-transform: uppercase;
   color: var(--color-primary);
 }

@@ -6,8 +6,7 @@
 
 .card {
   padding: var(--space-8);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-lg);
+  border: var(--border-thin) solid var(--color-foreground);
   background-color: var(--color-bg-primary);
   transition: transform var(--transition-base), box-shadow var(--transition-base);
 }
@@ -30,11 +29,12 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 56px;
-  height: 56px;
+  width: 64px;
+  height: 64px;
   margin-bottom: var(--space-5);
-  border-radius: var(--radius-lg);
-  background-color: rgba(var(--color-primary-rgb), 0.1);
-  color: var(--color-primary);
+  border-radius: var(--radius-full);
+  border: var(--border-thin) solid var(--color-foreground);
+  background-color: var(--color-accent);
+  color: var(--color-foreground);
   font-size: var(--fs-xl);
 }

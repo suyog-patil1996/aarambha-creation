@@ -1,6 +1,7 @@
 .pageHeader {
   background-color: var(--color-bg-secondary);
-  padding-block: var(--space-16);
+  padding-top: calc(80px + var(--space-16));
+  padding-bottom: var(--space-16);
   text-align: center;
 }
 

@@ -1,1 +1,1 @@
-export const SITE_NAME = 'Your Company';
+export const SITE_NAME = 'Aarambha Creation';

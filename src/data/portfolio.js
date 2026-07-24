@@ -1,46 +1,49 @@
-export const PORTFOLIO_CATEGORIES = ['All', 'Branding', 'Web Design', 'App Design', 'Marketing'];
+import printStackImage from '../assets/images/print-stack.jpg';
+import largeFormatImage from '../assets/images/large-format.jpg';
+
+export const PORTFOLIO_CATEGORIES = ['All', 'Offset Printing', 'Large Format', 'Branding', 'Packaging', 'Digital'];
 
 export const PORTFOLIO = [
   {
     id: 1,
-    title: 'Brand Refresh',
-    category: 'Branding',
-    image: null,
-    description: 'A complete visual identity refresh for a growing retail brand.',
+    title: 'Corporate Stationery Suite',
+    category: 'Offset Printing',
+    image: printStackImage,
+    description: 'Business cards, letterheads, and brochures printed with premium finishing.',
   },
   {
     id: 2,
-    title: 'E-Commerce Platform',
-    category: 'Web Design',
-    image: null,
-    description: 'A fast, conversion-focused online store built to scale.',
+    title: 'Grand Festival Banner Campaign',
+    category: 'Large Format',
+    image: largeFormatImage,
+    description: 'Large-format festival banners produced for high-visibility retail promotions.',
   },
   {
     id: 3,
-    title: 'Mobile Banking App',
-    category: 'App Design',
+    title: 'Brand Identity Refresh',
+    category: 'Branding',
     image: null,
-    description: 'A clean, intuitive interface for everyday banking.',
+    description: 'A complete logo and visual identity system for a growing local business.',
   },
   {
     id: 4,
-    title: 'Restaurant Website',
-    category: 'Web Design',
+    title: 'Product Packaging Design',
+    category: 'Packaging',
     image: null,
-    description: 'A warm, visual site that puts the menu and mood first.',
+    description: 'Structural and visual packaging design built to stand out on the shelf.',
   },
   {
     id: 5,
-    title: 'Marketing Campaign',
-    category: 'Marketing',
+    title: 'Wedding Invitation Suite',
+    category: 'Offset Printing',
     image: null,
-    description: 'A multi-channel campaign that doubled qualified leads.',
+    description: 'Premium wedding stationery with custom finishing and tactile detailing.',
   },
   {
     id: 6,
-    title: 'SaaS Dashboard',
-    category: 'App Design',
+    title: 'Social Media Creative Pack',
+    category: 'Digital',
     image: null,
-    description: 'A data-dense dashboard made simple and fast to use.',
+    description: 'Scroll-stopping digital creatives designed for social media campaigns.',
   },
 ];

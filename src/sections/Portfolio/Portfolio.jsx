@@ -2,11 +2,11 @@ import { useMemo, useState } from 'react';
 import { motion } from 'framer-motion';
 import SectionTitle from '../../components/SectionTitle';
 import { fadeUp, staggerContainer } from '../../utils/motionVariants';
-import { scrollReveal } from '../../utils/scrollReveal';
 import { PORTFOLIO, PORTFOLIO_CATEGORIES } from '../../data/portfolio';
 import styles from './Portfolio.module.css';
 
 function Portfolio({
+  id,
   tag = 'Our Work',
   title = 'Recent Projects',
   subtitle = 'A selection of work across industries and disciplines.',
@@ -21,7 +21,7 @@ function Portfolio({
   );
 
   return (
-    <section className="container">
+    <section id={id} className="container">
       <SectionTitle tag={tag} title={title} subtitle={subtitle} />
 
       <div className={styles.filters} aria-label="Filter portfolio by category">
@@ -38,7 +38,13 @@ function Portfolio({
         ))}
       </div>
 
-      <motion.div className={styles.grid} variants={staggerContainer} {...scrollReveal(0.1)}>
+      <motion.div
+        key={activeCategory}
+        className={styles.grid}
+        variants={staggerContainer}
+        initial="hidden"
+        animate="visible"
+      >
         {filteredItems.map((item) => (
           <motion.article key={item.id} variants={fadeUp} className={styles.item}>
             <div className={styles.imageWrap}>

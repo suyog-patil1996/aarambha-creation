@@ -1,34 +1,34 @@
-import { FiLayout, FiCode, FiTrendingUp, FiPenTool, FiShield, FiHeadphones } from 'react-icons/fi';
+import { FiPrinter, FiMaximize2, FiPackage, FiPenTool, FiShare2, FiEdit3 } from 'react-icons/fi';
 
 export const SERVICES = [
   {
-    icon: FiLayout,
-    title: 'Web Design',
-    description: 'Clean, modern interfaces tailored to your brand and the people you serve.',
+    icon: FiPrinter,
+    title: 'Offset Printing',
+    description: 'High-quality, precision bulk printing. Business cards, flyers, letterheads, and corporate stationery.',
   },
   {
-    icon: FiCode,
-    title: 'Development',
-    description: 'Fast, reliable builds using modern tools and industry best practices.',
+    icon: FiMaximize2,
+    title: 'Large Format Flex Printing',
+    description: 'Large-format, vibrant prints for banners, hoardings, and displays that demand attention from afar.',
   },
   {
-    icon: FiTrendingUp,
-    title: 'Digital Marketing',
-    description: 'Strategies that help you reach the right audience and grow steadily.',
+    icon: FiPackage,
+    title: 'Brochures & Packaging',
+    description: 'Tactile, print-ready designs that tell a story in your hands. Structural and visual packaging solutions.',
   },
   {
     icon: FiPenTool,
-    title: 'Branding',
-    description: 'Consistent visual identity across every customer touchpoint.',
+    title: 'Logo & Branding',
+    description: 'Visual identity creation that captures the soul of your business. Logos, typography, and brand guidelines.',
   },
   {
-    icon: FiShield,
-    title: 'Maintenance',
-    description: 'Ongoing support to keep your site secure, fast, and up to date.',
+    icon: FiShare2,
+    title: 'Digital Creatives',
+    description: 'Scroll-stopping social media graphics, web banners, and digital ads designed for maximum engagement.',
   },
   {
-    icon: FiHeadphones,
-    title: 'Consulting',
-    description: 'Expert guidance to help you make the right technology decisions.',
+    icon: FiEdit3,
+    title: 'Custom Design',
+    description: 'Tailored creative materials designed specifically for your unique brand voice and business purpose.',
   },
 ];

@@ -1,5 +1,6 @@
 .cta {
   background-color: var(--color-primary);
+  border-top: var(--border-thick) solid var(--color-foreground);
 }
 
 .inner {

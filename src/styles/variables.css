@@ -1,19 +1,25 @@
 :root {
   /* ============ BRAND COLORS ============ */
---color-primary: #E43D84;
---color-primary-light: #EC6AA3;
---color-primary-dark: #C82669;
---color-primary-rgb: 228,61,132;
+--color-primary: #FF5A3C;
+--color-primary-light: #FF8566;
+--color-primary-dark: #E0431F;
+--color-primary-rgb: 255, 90, 60;
 
-  --color-secondary: #0f172a;
-  --color-secondary-light: #1e293b;
-  --color-secondary-dark: #020617;
-  --color-secondary-rgb: 15, 23, 42;
+  --color-secondary: #FF3C7D;
+  --color-secondary-light: #FF6B9E;
+  --color-secondary-dark: #E01F5C;
+  --color-secondary-rgb: 255, 60, 125;
 
-  --color-accent: #F5C14C;
---color-accent-light: #FFD770;
---color-accent-dark: #E3AF28;
-  --color-accent-rgb: 245, 158, 11;
+  --color-accent: #FFC93C;
+--color-accent-light: #FFD66B;
+--color-accent-dark: #E0A800;
+  --color-accent-rgb: 255, 201, 60;
+
+  /* ============ BASE / SURFACE ============ */
+  --color-background: #FFF8F0;
+  --color-foreground: #1C1917;
+  --color-muted: #F5EBDC;
+  --color-muted-foreground: #726B62;
 
   /* ============ NEUTRALS ============ */
   --color-white: #ffffff;
@@ -37,25 +43,30 @@
   --color-info: #0ea5e9;
 
   /* ============ TEXT ============ */
-  --color-text-primary: var(--color-gray-900);
-  --color-text-secondary: var(--color-gray-600);
-  --color-text-muted: var(--color-gray-400);
+  --color-text-primary: var(--color-foreground);
+  --color-text-secondary: var(--color-muted-foreground);
+  --color-text-muted: #999999;
   --color-text-inverse: var(--color-white);
   --color-text-link: var(--color-primary);
 
   /* ============ BACKGROUND ============ */
-  --color-bg-primary: var(--color-white);
-  --color-bg-secondary: var(--color-gray-50);
-  --color-bg-dark: var(--color-secondary);
-  --color-bg-overlay: rgba(15, 23, 42, 0.6);
+  --color-bg-primary: var(--color-background);
+  --color-bg-secondary: var(--color-muted);
+  --color-bg-dark: var(--color-foreground);
+  --color-bg-overlay: rgba(28, 25, 23, 0.6);
 
   /* ============ BORDER ============ */
-  --color-border: var(--color-gray-200);
-  --color-border-dark: var(--color-gray-300);
+  --color-border: #D9D9D9;
+  --color-border-dark: #B3B3B3;
+  --border-thin: 2px;
+  --border-md: 4px;
+  --border-thick: 8px;
 
   /* ============ TYPOGRAPHY ============ */
-  --font-heading:'Playfair Display', serif;
-  --font-body:'Poppins',sans-serif;
+  --font-heading: 'Space Grotesk', 'Inter', sans-serif;
+  --font-body: 'Inter', sans-serif;
+  --font-mono: 'Space Mono', 'Courier New', monospace;
+  --font-serif: 'Playfair Display', Georgia, serif;
 
   --fs-xs: 0.75rem;
   --fs-sm: 0.875rem;
@@ -80,9 +91,11 @@
   --lh-normal: 1.5;
   --lh-relaxed: 1.75;
 
-  --ls-tight: -0.02em;
+  --ls-tight: -0.04em;
   --ls-normal: 0;
   --ls-wide: 0.05em;
+  --ls-wider: 0.1em;
+  --ls-widest: 0.15em;
 
   /* ============ SPACING ============ */
   --space-1: 0.25rem;
@@ -103,20 +116,21 @@
   --section-padding-y: var(--space-24);
   --section-padding-y-sm: var(--space-16);
 
-  /* ============ BORDER RADIUS ============ */
-  --radius-sm: 4px;
-  --radius-md: 8px;
-  --radius-lg: 12px;
-  --radius-xl: 16px;
-  --radius-2xl: 24px;
+  /* ============ BORDER RADIUS (sharp, neo-brutalist) ============ */
+  --radius-sm: 0px;
+  --radius-md: 0px;
+  --radius-lg: 0px;
+  --radius-xl: 0px;
+  --radius-2xl: 0px;
   --radius-full: 9999px;
 
-  /* ============ SHADOWS ============ */
-  --shadow-sm: 0 1px 2px rgba(15, 23, 42, 0.06);
-  --shadow-md: 0 4px 12px rgba(15, 23, 42, 0.08);
-  --shadow-lg:0 18px 45px rgba(0,0,0,.12);
-  --shadow-xl: 0 16px 40px rgba(15, 23, 42, 0.12);
-  --shadow-primary: 0 8px 24px rgba(var(--color-primary-rgb), 0.25);
+  /* ============ SHADOWS (hard offset, no blur) ============ */
+  --shadow-sm: 4px 4px 0 0 var(--color-foreground);
+  --shadow-md: 6px 6px 0 0 var(--color-foreground);
+  --shadow-lg: 8px 8px 0 0 var(--color-foreground);
+  --shadow-xl: 12px 12px 0 0 var(--color-foreground);
+  --shadow-2xl: 16px 16px 0 0 var(--color-foreground);
+  --shadow-primary: 6px 6px 0 0 var(--color-primary);
 
   /* ============ CONTAINER ============ */
   --container-sm: 640px;
@@ -128,10 +142,10 @@
   --container-padding-mobile: var(--space-4);
 
   /* ============ BUTTON ============ */
-  --btn-radius:999px;
+  --btn-radius: 0px;
   --btn-padding-y: 0.75rem;
   --btn-padding-x: 1.75rem;
-  --btn-font-weight: var(--fw-semibold);
+  --btn-font-weight: var(--fw-bold);
   --btn-font-size: var(--fs-base);
 
   /* ============ TRANSITIONS ============ */

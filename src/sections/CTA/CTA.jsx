@@ -5,9 +5,9 @@ import { scrollReveal } from '../../utils/scrollReveal';
 import styles from './CTA.module.css';
 
 function CTA({
-  title = "Ready to start your project?",
-  subtitle = "Let's build something your customers will love.",
-  cta = { label: 'Get in Touch', to: '/contact' },
+  title = 'Ready to Make Your Mark?',
+  subtitle = 'Whether you need a full brand overhaul or a stack of fresh business cards, our presses are ready.',
+  cta = { label: 'Start a Project', to: '/#contact' },
 }) {
   return (
     <section className={styles.cta}>
@@ -18,7 +18,7 @@ function CTA({
             <motion.p variants={fadeUp}>{subtitle}</motion.p>
           </div>
           <motion.div variants={fadeUp}>
-            <Button to={cta.to} size="lg" variant="accent">
+            <Button href={cta.to} size="lg" variant="accent">
               {cta.label}
             </Button>
           </motion.div>

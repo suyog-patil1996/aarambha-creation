@@ -5,15 +5,17 @@ import { scrollReveal } from '../../utils/scrollReveal';
 import styles from './About.module.css';
 
 function About({
+  id,
   tag = 'About Us',
   title = 'A team dedicated to your success',
   description = 'We combine design and technology to build digital experiences that help businesses grow.',
   features = [],
   image,
+  imageAlt = '',
   reverse = false,
 }) {
   return (
-    <section className="container">
+    <section id={id} className="container">
       <div className={`${styles.grid} ${reverse ? styles.reverse : ''}`}>
         {image && (
           <motion.div
@@ -21,7 +23,7 @@ function About({
             variants={reverse ? slideInRight : slideInLeft}
             {...scrollReveal(0.3)}
           >
-            <img src={image} alt="" />
+            <img src={image} alt={imageAlt} loading="lazy" />
           </motion.div>
         )}
         <motion.div className={styles.content} variants={staggerContainer} {...scrollReveal(0.3)}>

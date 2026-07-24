@@ -1,14 +1,16 @@
 export const COMPANY = {
-  name: 'Your Company',
-  tagline: 'Building digital experiences that grow your business.',
-  email: 'hello@yourcompany.com',
-  phone: '+1 (555) 123-4567',
-  whatsapp: '15551234567',
-  address: '123 Business Avenue, Suite 100, New York, NY 10001',
+  name: 'Aarambha Creation',
+  tagline: 'Ideas. Print. Impact.',
+  description:
+    'A creative design and precision printing studio based in Sangli — where ideas begin and designs speak.',
+  // TODO: no public email was found for this client yet — replace with the real address.
+  email: 'info@aarambhacreation.com',
+  phone: '+91 77983 60110',
+  whatsapp: '917798360110',
+  address: 'Sangli-Tasgav Main Road, Mangalwar Peth, Near Rikshaw Stop, Madhavnagar, Sangli, Maharashtra 416406',
+  mapUrl: 'https://maps.google.com/?q=Aarambha+Creation+Sangli',
   social: {
-    facebook: 'https://facebook.com',
-    instagram: 'https://instagram.com',
-    linkedin: 'https://linkedin.com',
-    twitter: 'https://twitter.com',
+    // No social profiles were found yet — add entries here once available,
+    // e.g. instagram: 'https://instagram.com/aarambhacreation'
   },
 };

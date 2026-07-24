@@ -6,13 +6,14 @@ import { SERVICES } from '../../data/services';
 import styles from './Services.module.css';
 
 function Services({
+  id,
   tag = 'What We Offer',
   title = 'Services Built Around Your Goals',
   subtitle = 'Everything you need to launch, grow, and maintain a strong online presence.',
   services = SERVICES,
 }) {
   return (
-    <section className="container">
+    <section id={id} className="container">
       <SectionTitle tag={tag} title={title} subtitle={subtitle} />
       <motion.div className={styles.grid} variants={staggerContainer} {...scrollReveal(0.15)}>
         {services.map(({ icon: Icon, title: serviceTitle, description }) => (
