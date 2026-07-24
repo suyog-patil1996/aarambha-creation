@@ -7,7 +7,7 @@ function PrivacyPolicy() {
 
   return (
     <PageLayout title="Privacy Policy" subtitle="Last updated: July 23, 2026">
-      <div className="container">
+      <div className={`container ${styles.content}`}>
         <div className={styles.block}>
           <h2>Introduction</h2>
           <p>

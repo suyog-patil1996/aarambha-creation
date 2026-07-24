@@ -7,7 +7,7 @@ function TermsConditions() {
 
   return (
     <PageLayout title="Terms & Conditions" subtitle="Last updated: July 23, 2026">
-      <div className="container">
+      <div className={`container ${styles.content}`}>
         <div className={styles.block}>
           <h2>Introduction</h2>
           <p>

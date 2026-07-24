@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { useLocation, useOutlet } from 'react-router-dom';
 import { pageTransition } from '../../utils/motionVariants';
@@ -5,6 +6,12 @@ import { pageTransition } from '../../utils/motionVariants';
 function AnimatedOutlet() {
   const location = useLocation();
   const element = useOutlet();
+
+  useEffect(() => {
+    if (!location.hash) {
+      window.scrollTo({ top: 0 });
+    }
+  }, [location.pathname, location.hash]);
 
   return (
     <AnimatePresence mode="wait">

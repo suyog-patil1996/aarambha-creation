@@ -1,7 +1,30 @@
+.content {
+  max-width: 760px;
+  margin-inline: auto;
+  padding-block: var(--space-16);
+}
+
+.block {
+  padding-bottom: var(--space-8);
+  border-bottom: 1px solid var(--glass-border);
+}
+
 .block + .block {
   margin-top: var(--space-8);
 }
 
+.block:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
 .block h2 {
+  font-size: var(--fs-2xl);
+  text-transform: none;
+  letter-spacing: normal;
   margin-bottom: var(--space-3);
+}
+
+.block p {
+  max-width: 65ch;
 }

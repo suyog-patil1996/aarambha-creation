@@ -112,14 +112,13 @@
     align-items: flex-start;
     gap: var(--space-6);
     padding: var(--space-8) var(--container-padding);
-    background: var(--glass-bg-strong);
-    backdrop-filter: var(--glass-blur-lg);
-    -webkit-backdrop-filter: var(--glass-blur-lg);
+    background: var(--color-background);
     border-left: var(--border-md) solid var(--glass-border);
     box-shadow: var(--shadow-lg);
     transform: translateX(100%);
     transition: transform var(--transition-base);
     overflow-y: auto;
+    z-index: 1;
   }
 
   .links .link {
