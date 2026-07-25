@@ -38,6 +38,10 @@
   gap: var(--space-5);
 }
 
+.submitBtn {
+  align-self: flex-start;
+}
+
 .success {
   padding: var(--space-3) var(--space-4);
   border: var(--border-thin) solid var(--color-success);

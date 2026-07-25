@@ -2,21 +2,13 @@
   position: relative;
   min-height: 100vh;
   display: flex;
-  align-items: center;
-  padding-block: 140px var(--space-20);
+  /* flex-start + a fixed top offset (rather than centering) guarantees the
+     content block clears the top badge on every viewport — centering's offset
+     shrinks on short viewports and can pull the eyebrow up into the badge card. */
+  align-items: flex-start;
+  padding-block: 240px var(--space-20);
   overflow: hidden;
   color: var(--color-white);
-}
-
-/* Badges only render at >=768px (see .badges below). At that width, switch off
-   true centering in favor of a fixed top offset that guarantees the content
-   block clears the badge — centering's offset shrinks on short viewports and
-   can pull the eyebrow up into the badge card otherwise. */
-@media (min-width: 768px) {
-  .hero {
-    align-items: flex-start;
-    padding-top: 240px;
-  }
 }
 
 .imageLayer {
@@ -152,8 +144,12 @@
   color: var(--color-foreground);
 }
 
-@media (max-width: 767px) {
-  .badges {
-    display: none;
+@media (max-width: 479px) {
+  .badge {
+    padding: var(--space-3) var(--space-4);
+  }
+
+  .badgeValue {
+    font-size: var(--fs-2xl);
   }
 }

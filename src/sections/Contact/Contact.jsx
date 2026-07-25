@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { FiMail, FiMapPin, FiPhone } from 'react-icons/fi';
+import { FaWhatsapp } from 'react-icons/fa';
 import SectionTitle from '../../components/SectionTitle';
 import Input from '../../components/Input';
 import Button from '../../components/Button';
@@ -48,6 +49,12 @@ function Contact({
             <a href={`tel:${COMPANY.phone}`}>{COMPANY.phone}</a>
           </div>
           <div className={styles.infoItem}>
+            <FaWhatsapp />
+            <a href={`https://wa.me/${COMPANY.whatsapp}`} target="_blank" rel="noopener noreferrer">
+              {COMPANY.phone}
+            </a>
+          </div>
+          <div className={styles.infoItem}>
             <FiMapPin />
             <a href={COMPANY.mapUrl} target="_blank" rel="noopener noreferrer">
               {COMPANY.address}
@@ -82,12 +89,12 @@ function Contact({
             label="Message"
             name="message"
             as="textarea"
+            rows={3}
             value={form.message}
             onChange={handleChange}
             placeholder="Tell us about your project"
-            required
           />
-          <Button type="submit" size="lg" fullWidth>
+          <Button type="submit" size="lg" className={styles.submitBtn}>
             Send Message
           </Button>
         </motion.form>

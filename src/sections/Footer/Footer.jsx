@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { FaFacebookF, FaInstagram, FaLinkedinIn, FaTwitter, FaWhatsapp, FaYoutube } from 'react-icons/fa';
+import { FiMail, FiMapPin, FiPhone } from 'react-icons/fi';
 import useAnchorNav from '../../hooks/useAnchorNav';
 import { gmailComposeUrl } from '../../utils/email';
 import { COMPANY } from '../../data/company';
@@ -66,16 +67,25 @@ function Footer() {
 
         <div>
           <h3 className={styles.heading}>Contact</h3>
-          <ul className={styles.linkList}>
+          <ul className={`${styles.linkList} ${styles.contactList}`}>
             <li>
+              <FiMail />
               <a href={gmailComposeUrl(COMPANY.email)} target="_blank" rel="noopener noreferrer">
                 {COMPANY.email}
               </a>
             </li>
             <li>
+              <FiPhone />
               <a href={`tel:${COMPANY.phone}`}>{COMPANY.phone}</a>
             </li>
             <li>
+              <FaWhatsapp />
+              <a href={`https://wa.me/${COMPANY.whatsapp}`} target="_blank" rel="noopener noreferrer">
+                {COMPANY.phone}
+              </a>
+            </li>
+            <li>
+              <FiMapPin />
               <a href={COMPANY.mapUrl} target="_blank" rel="noopener noreferrer">
                 {COMPANY.address}
               </a>

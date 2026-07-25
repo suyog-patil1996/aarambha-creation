@@ -9,7 +9,6 @@ export const COMPANY = {
   address: 'Sangli-Tasgav Main Road, Mangalwar Peth, Near Rikshaw Stop, Madhavnagar, Sangli, Maharashtra 416406',
   mapUrl: 'https://maps.google.com/?q=Aarambha+Creation+Sangli',
   social: {
-    // No social profiles were found yet — add entries here once available,
-    // e.g. instagram: 'https://instagram.com/aarambhacreation'
+    instagram: 'https://www.instagram.com/aarambhacreation',
   },
 };
