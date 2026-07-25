@@ -6,6 +6,7 @@ import Input from '../../components/Input';
 import Button from '../../components/Button';
 import { fadeUp, staggerContainer } from '../../utils/motionVariants';
 import { scrollReveal } from '../../utils/scrollReveal';
+import { gmailComposeUrl } from '../../utils/email';
 import { COMPANY } from '../../data/company';
 import styles from './Contact.module.css';
 
@@ -38,7 +39,9 @@ function Contact({
         <motion.div variants={fadeUp} className={styles.info}>
           <div className={styles.infoItem}>
             <FiMail />
-            <a href={`mailto:${COMPANY.email}`}>{COMPANY.email}</a>
+            <a href={gmailComposeUrl(COMPANY.email)} target="_blank" rel="noopener noreferrer">
+              {COMPANY.email}
+            </a>
           </div>
           <div className={styles.infoItem}>
             <FiPhone />

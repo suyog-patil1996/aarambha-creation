@@ -1,7 +1,7 @@
 .grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: var(--space-12);
+  gap: var(--space-16);
   align-items: center;
 }
 
@@ -51,7 +51,9 @@
 }
 
 .description {
-  margin-top: var(--space-4);
+  max-width: 650px;
+  margin-top: var(--space-5);
+  line-height: var(--lh-relaxed);
 }
 
 .features {

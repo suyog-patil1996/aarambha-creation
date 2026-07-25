@@ -1,9 +1,12 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Pagination } from 'swiper/modules';
+import { motion } from 'framer-motion';
 import { FaStar } from 'react-icons/fa';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import SectionTitle from '../../components/SectionTitle';
+import { fadeUp } from '../../utils/motionVariants';
+import { scrollReveal } from '../../utils/scrollReveal';
 import { TESTIMONIALS } from '../../data/testimonials';
 import styles from './Testimonials.module.css';
 
@@ -18,6 +21,7 @@ function Testimonials({
   return (
     <section className="container">
       <SectionTitle tag={tag} title={title} subtitle={subtitle} />
+      <motion.div variants={fadeUp} {...scrollReveal(0.2)}>
       <Swiper
         modules={[Autoplay, Pagination]}
         pagination={{ clickable: true }}
@@ -56,6 +60,7 @@ function Testimonials({
           </SwiperSlide>
         ))}
       </Swiper>
+      </motion.div>
     </section>
   );
 }

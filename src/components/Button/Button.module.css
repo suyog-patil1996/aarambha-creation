@@ -44,7 +44,28 @@
 }
 
 .btn:active {
-  transform: translateY(1px);
+  transform: translateY(-1px);
+}
+
+.ripple {
+  position: absolute;
+  z-index: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.5);
+  transform: scale(0);
+  pointer-events: none;
+  animation: rippleEffect 600ms var(--ease-out);
+}
+
+@keyframes rippleEffect {
+  from {
+    transform: scale(0);
+    opacity: 0.6;
+  }
+  to {
+    transform: scale(2.5);
+    opacity: 0;
+  }
 }
 
 .icon {
@@ -115,18 +136,21 @@
 
 /* Sizes */
 .sm {
-  padding: 0.5rem 1.25rem;
+  height: 40px;
+  padding: 0 1.25rem;
   font-size: var(--fs-sm);
 }
 
 .md {
-  padding: var(--btn-padding-y) var(--btn-padding-x);
-  font-size: var(--fs-base);
+  height: 48px;
+  padding: 0 var(--btn-padding-x);
+  font-size: var(--btn-font-size);
 }
 
 .lg {
-  padding: 1rem 2.25rem;
-  font-size: var(--fs-md);
+  height: 54px;
+  padding: 0 2rem;
+  font-size: var(--btn-font-size);
 }
 
 .fullWidth {

@@ -1,6 +1,9 @@
 import { useState } from 'react';
+import { motion } from 'framer-motion';
 import { HiChevronDown } from 'react-icons/hi2';
 import SectionTitle from '../../components/SectionTitle';
+import { fadeUp, staggerContainer } from '../../utils/motionVariants';
+import { scrollReveal } from '../../utils/scrollReveal';
 import { FAQS } from '../../data/faq';
 import styles from './FAQ.module.css';
 
@@ -15,11 +18,11 @@ function FAQ({
   return (
     <section className="container">
       <SectionTitle tag={tag} title={title} subtitle={subtitle} />
-      <div className={styles.list}>
+      <motion.div className={styles.list} variants={staggerContainer} {...scrollReveal(0.2)}>
         {faqs.map((faq) => {
           const isOpen = openId === faq.id;
           return (
-            <div key={faq.id} className={styles.item}>
+            <motion.div key={faq.id} variants={fadeUp} className={styles.item}>
               <button
                 type="button"
                 className={styles.question}
@@ -37,10 +40,10 @@ function FAQ({
               >
                 <p className={styles.answer}>{faq.answer}</p>
               </div>
-            </div>
+            </motion.div>
           );
         })}
-      </div>
+      </motion.div>
     </section>
   );
 }

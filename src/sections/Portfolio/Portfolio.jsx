@@ -53,6 +53,7 @@ function Portfolio({
               ) : (
                 <div className={styles.placeholder} aria-hidden="true" />
               )}
+              <div className={styles.overlay} aria-hidden="true" />
               <span className={styles.badge}>{item.category}</span>
             </div>
             <h3>{item.title}</h3>

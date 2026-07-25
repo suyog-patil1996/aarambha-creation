@@ -15,7 +15,7 @@
 
 @media (max-width: 1024px) {
   :root {
-    --section-padding-y: var(--space-16);
+    --section-padding-y: var(--space-24);
   }
 
   .container {
@@ -25,7 +25,7 @@
 
 @media (max-width: 768px) {
   :root {
-    --section-padding-y: var(--space-12);
+    --section-padding-y: var(--space-18);
     --container-padding: var(--space-5);
   }
 
@@ -36,7 +36,7 @@
 
 @media (max-width: 480px) {
   :root {
-    --section-padding-y: var(--space-10);
+    --section-padding-y: var(--space-14);
     --container-padding: var(--container-padding-mobile);
   }
 }

@@ -29,16 +29,42 @@ h3 {
   text-transform: uppercase;
 }
 
+/* Hero heading — 36 / 48 / 64px across mobile / tablet / desktop */
 h1 {
-  font-size: clamp(2.25rem, 1.6rem + 2.5vw, var(--fs-6xl));
+  font-size: var(--fs-h1-mobile);
+  line-height: 1.1;
+  letter-spacing: var(--ls-h1);
 }
 
+/* Section heading — 32 / 42 / 56px across mobile / tablet / desktop */
 h2 {
-  font-size: clamp(1.875rem, 1.4rem + 1.8vw, var(--fs-5xl));
+  font-size: var(--fs-h2-mobile);
 }
 
+/* Card title */
 h3 {
-  font-size: clamp(1.5rem, 1.2rem + 1.2vw, var(--fs-3xl));
+  font-size: var(--fs-card-title);
+  font-weight: var(--fw-semibold);
+}
+
+@media (min-width: 768px) {
+  h1 {
+    font-size: var(--fs-h1-tablet);
+  }
+
+  h2 {
+    font-size: var(--fs-h2-tablet);
+  }
+}
+
+@media (min-width: 1280px) {
+  h1 {
+    font-size: var(--fs-h1-desktop);
+  }
+
+  h2 {
+    font-size: var(--fs-h2-desktop);
+  }
 }
 
 h4 {
@@ -54,7 +80,7 @@ h6 {
 }
 
 p {
-  font-size: var(--fs-base);
+  font-size: var(--fs-body);
   line-height: var(--lh-relaxed);
   color: var(--color-text-secondary);
 }

@@ -11,6 +11,13 @@
   box-shadow: var(--shadow-sm), var(--glass-shadow-inset);
   backdrop-filter: var(--glass-blur-sm);
   -webkit-backdrop-filter: var(--glass-blur-sm);
+  transition: transform var(--transition-premium), box-shadow var(--transition-premium), background var(--transition-premium);
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  background: var(--glass-bg-strong);
+  box-shadow: var(--shadow-lg), var(--glass-shadow-inset);
 }
 
 .rating {

@@ -1,3 +1,6 @@
+import { motion } from 'framer-motion';
+import { fadeIn } from '../../utils/motionVariants';
+import { scrollReveal } from '../../utils/scrollReveal';
 import { PARTNERS } from '../../data/partners';
 import styles from './Partners.module.css';
 
@@ -5,7 +8,7 @@ function Partners({ title = 'Trusted by teams around the world', partners = PART
   const loopItems = [...partners, ...partners];
 
   return (
-    <section className="container">
+    <motion.section className="container" variants={fadeIn} {...scrollReveal(0.3)}>
       {title && <p className={styles.title}>{title}</p>}
       <div className={styles.track}>
         <div className={styles.scroller}>
@@ -20,7 +23,7 @@ function Partners({ title = 'Trusted by teams around the world', partners = PART
           ))}
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 }
 

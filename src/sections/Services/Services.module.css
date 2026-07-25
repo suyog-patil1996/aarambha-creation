@@ -2,9 +2,12 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: var(--space-8);
+  align-items: stretch;
 }
 
 .card {
+  display: flex;
+  flex-direction: column;
   padding: var(--space-8);
   border: var(--border-thin) solid var(--glass-border);
   border-radius: var(--radius-lg);
@@ -12,31 +15,33 @@
   box-shadow: var(--shadow-sm), var(--glass-shadow-inset);
   backdrop-filter: var(--glass-blur-sm);
   -webkit-backdrop-filter: var(--glass-blur-sm);
-  transition: transform var(--transition-base), box-shadow var(--transition-base), background var(--transition-base);
+  transition: transform var(--transition-premium), box-shadow var(--transition-premium), background var(--transition-premium);
 }
 
 .card:hover {
-  transform: translateY(-6px);
+  transform: translateY(-8px);
   background: var(--glass-bg-strong);
   box-shadow: var(--shadow-lg), var(--glass-shadow-inset);
 }
 
 .card h3 {
-  font-size: var(--fs-lg);
-  margin-bottom: var(--space-2);
+  font-size: var(--fs-card-title);
+  margin-bottom: var(--space-3);
 }
 
 .card p {
   font-size: var(--fs-sm);
+  line-height: var(--lh-relaxed);
 }
 
 .iconWrap {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  flex-shrink: 0;
   width: 64px;
   height: 64px;
-  margin-bottom: var(--space-5);
+  margin-bottom: var(--space-6);
   border-radius: var(--radius-full);
   border: 1px solid var(--glass-border);
   background: linear-gradient(135deg, #ff7a45, #ff4d00);

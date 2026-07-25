@@ -14,11 +14,12 @@
   box-shadow: var(--shadow-sm), var(--glass-shadow-inset);
   backdrop-filter: var(--glass-blur-sm);
   -webkit-backdrop-filter: var(--glass-blur-sm);
-  transition: transform var(--transition-base), box-shadow var(--transition-base);
+  transition: transform var(--transition-premium), box-shadow var(--transition-premium);
 }
 
 .card:hover {
-  transform: translateY(-6px);
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-lg), var(--glass-shadow-inset);
 }
 
 .highlighted {
@@ -40,7 +41,7 @@
 }
 
 .card h3 {
-  font-size: var(--fs-lg);
+  font-size: var(--fs-card-title);
 }
 
 .description {

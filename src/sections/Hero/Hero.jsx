@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import Button from '../../components/Button';
 import { fadeUp, staggerContainer, zoomIn } from '../../utils/motionVariants';
 import { STATISTICS } from '../../data/statistics';
@@ -14,6 +14,12 @@ function Hero({
   image = heroImage,
   stats = [STATISTICS[2], STATISTICS[0]],
 }) {
+  const { scrollY } = useScroll();
+  // The top badge sits just below the fixed navbar. As soon as the page scrolls,
+  // it starts sliding up behind the (higher stacking-order) navbar and gets visually
+  // clipped — so fade it out early, before that overlap becomes visible.
+  const badgeStartOpacity = useTransform(scrollY, [0, 80], [1, 0]);
+
   return (
     <section className={styles.hero}>
       {image && (
@@ -52,23 +58,33 @@ function Hero({
       </div>
 
       {stats && stats.length > 0 && (
-        <motion.div
-          className={styles.badges}
-          variants={zoomIn}
-          initial="hidden"
-          animate="visible"
-          transition={{ delay: 0.4 }}
-        >
-          {stats.map((stat, index) => (
-            <div key={stat.id} className={`${styles.badge} ${index === 0 ? styles.badgeStart : styles.badgeEnd}`}>
-              <span className={styles.badgeValue}>
-                {stat.value}
-                {stat.suffix}
-              </span>
-              <span className={styles.badgeLabel}>{stat.label}</span>
-            </div>
-          ))}
-        </motion.div>
+        <div className={styles.badges}>
+          {stats.map((stat, index) => {
+            const badge = (
+              <motion.div
+                className={`${styles.badge} ${index === 0 ? styles.badgeStart : styles.badgeEnd}`}
+                variants={zoomIn}
+                initial="hidden"
+                animate="visible"
+                transition={{ delay: 0.4 + index * 0.1 }}
+              >
+                <span className={styles.badgeValue}>
+                  {stat.value}
+                  {stat.suffix}
+                </span>
+                <span className={styles.badgeLabel}>{stat.label}</span>
+              </motion.div>
+            );
+
+            return index === 0 ? (
+              <motion.div key={stat.id} style={{ opacity: badgeStartOpacity }}>
+                {badge}
+              </motion.div>
+            ) : (
+              <div key={stat.id}>{badge}</div>
+            );
+          })}
+        </div>
       )}
     </section>
   );

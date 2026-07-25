@@ -5,18 +5,19 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 46px;
-  height: 46px;
+  width: 48px;
+  height: 48px;
   border-radius: var(--radius-full);
   background-color: var(--color-primary);
   color: var(--color-text-inverse);
   font-size: var(--fs-lg);
   box-shadow: var(--shadow-lg);
-  transition: transform var(--transition-base), background-color var(--transition-base);
+  transition: transform var(--transition-premium), background-color var(--transition-base), box-shadow var(--transition-base);
   z-index: var(--z-fixed);
 }
 
 .button:hover {
   background-color: var(--color-primary-dark);
-  transform: translateY(-4px);
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: var(--shadow-xl);
 }

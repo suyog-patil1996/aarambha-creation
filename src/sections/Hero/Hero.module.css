@@ -2,18 +2,20 @@
   position: relative;
   min-height: 100vh;
   display: flex;
-  align-items: flex-start;
-  padding-block: 96px var(--space-16);
+  align-items: center;
+  padding-block: 140px var(--space-20);
   overflow: hidden;
   color: var(--color-white);
 }
 
-/* Matches the breakpoint where .badgeStart becomes visible below —
-   reserves fixed clearance so the title can never sit under the badge,
-   regardless of viewport height or how many lines the title wraps to. */
+/* Badges only render at >=768px (see .badges below). At that width, switch off
+   true centering in favor of a fixed top offset that guarantees the content
+   block clears the badge — centering's offset shrinks on short viewports and
+   can pull the eyebrow up into the badge card otherwise. */
 @media (min-width: 768px) {
   .hero {
-    padding-top: 260px;
+    align-items: flex-start;
+    padding-top: 240px;
   }
 }
 
@@ -59,17 +61,30 @@
 }
 
 .title {
-  font-size: clamp(2.75rem, 1.5rem + 6vw, 7rem);
-  font-weight: var(--fw-extrabold);
-  line-height: 0.95;
+  font-size: var(--fs-h1-mobile);
+  font-weight: var(--fw-bold);
+  line-height: 1.1;
+  letter-spacing: var(--ls-h1);
   color: var(--color-white);
+}
+
+@media (min-width: 768px) {
+  .title {
+    font-size: var(--fs-h1-tablet);
+  }
+}
+
+@media (min-width: 1280px) {
+  .title {
+    font-size: var(--fs-h1-desktop);
+  }
 }
 
 .subtitle {
   margin-top: var(--space-6);
   max-width: 46ch;
-  font-family: 'Poppins', sans-serif;
-  font-size: var(--fs-md);
+  font-family: var(--font-body);
+  font-size: var(--fs-body);
   line-height: var(--lh-relaxed);
   color: rgba(255, 255, 255, 0.92);
   padding: var(--space-3) var(--space-5);

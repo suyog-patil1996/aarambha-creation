@@ -14,6 +14,12 @@
   -webkit-backdrop-filter: var(--glass-blur-sm);
   box-shadow: var(--shadow-sm);
   overflow: hidden;
+  transition: background var(--transition-base), box-shadow var(--transition-base);
+}
+
+.item:hover {
+  background: var(--glass-bg);
+  box-shadow: var(--shadow-md);
 }
 
 .question {
