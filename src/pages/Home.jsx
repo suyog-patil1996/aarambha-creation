@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import useDocumentTitle from '../hooks/useDocumentTitle';
 import Hero from '../sections/Hero';
 import About from '../sections/About';
@@ -5,10 +6,20 @@ import Services from '../sections/Services';
 import Portfolio from '../sections/Portfolio';
 import CTA from '../sections/CTA';
 import Contact from '../sections/Contact';
+import { useContactSection } from '../context/ContactSectionContext';
 import designDeskImage from '../assets/images/design-desk.jpg';
 
 function Home() {
   useDocumentTitle('Home');
+  const { isContactVisible, contactRequestCount } = useContactSection();
+
+  // Contact only enters the page once requested (nav link, "Get in Touch",
+  // "Start a Project"). Once it's rendered, scroll it into view — re-run on
+  // every request so a later click re-scrolls even if it's already visible.
+  useEffect(() => {
+    if (contactRequestCount === 0) return;
+    document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }, [contactRequestCount]);
 
   return (
     <>
@@ -39,7 +50,7 @@ function Home() {
         subtitle="A look at recent projects across offset printing, large-format displays, and brand design."
       />
       <CTA />
-      <Contact id="contact" />
+      {isContactVisible && <Contact id="contact" />}
     </>
   );
 }

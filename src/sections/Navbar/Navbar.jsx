@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { HiBars3, HiXMark } from 'react-icons/hi2';
 import Button from '../../components/Button';
+import BrandLogo from '../../components/BrandLogo';
 import useAnchorNav from '../../hooks/useAnchorNav';
 import { NAV_LINKS } from '../../data/navLinks';
 import { COMPANY } from '../../data/company';
@@ -87,7 +88,7 @@ function Navbar() {
     <header className={`${styles.navbar} ${isTransparent ? styles.transparent : styles.scrolled}`}>
       <div className={`container ${styles.inner}`}>
         <a href="/" className={styles.logo} onClick={(e) => handleNavClick(e, '/')}>
-          {COMPANY.name}
+          <BrandLogo className={styles.logoMark} title={COMPANY.name} />
         </a>
 
         <nav className={`${styles.links} ${isOpen ? styles.linksOpen : ''}`} aria-label="Primary">

@@ -12,20 +12,15 @@
   padding-bottom: var(--space-20);
 }
 
-.logo {
-  font-family: var(--font-heading);
-  font-size: var(--fs-lg);
-  font-weight: var(--fw-bold);
-  text-transform: uppercase;
-  letter-spacing: var(--ls-tight);
-  color: var(--color-text-inverse);
+.brand {
+  display: flex;
+  align-items: center;
 }
 
-.tagline {
-  margin-top: var(--space-4);
-  font-size: var(--fs-sm);
-  line-height: var(--lh-relaxed);
-  max-width: 320px;
+.logoImage {
+  width: clamp(260px, 26vw, 380px);
+  max-width: 100%;
+  height: auto;
 }
 
 .followBar {

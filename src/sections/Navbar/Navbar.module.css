@@ -36,17 +36,13 @@
 }
 
 .logo {
-  font-family: var(--font-heading);
-  font-size: var(--fs-lg);
-  font-weight: var(--fw-bold);
-  text-transform: uppercase;
-  letter-spacing: var(--ls-tight);
-  color: var(--color-white);
-  transition: color var(--transition-base);
+  display: inline-flex;
+  align-items: center;
 }
 
-.scrolled .logo {
-  color: var(--color-foreground);
+.logoMark {
+  height: 56px;
+  width: auto;
 }
 
 .links {

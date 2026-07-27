@@ -5,6 +5,7 @@ import useAnchorNav from '../../hooks/useAnchorNav';
 import { gmailComposeUrl } from '../../utils/email';
 import { COMPANY } from '../../data/company';
 import { NAV_LINKS } from '../../data/navLinks';
+import BrandLogo from '../../components/BrandLogo';
 import styles from './Footer.module.css';
 
 const SOCIAL_ICONS = {
@@ -33,8 +34,7 @@ function Footer() {
     <footer className={styles.footer}>
       <div className={`container ${styles.grid}`}>
         <div className={styles.brand}>
-          <p className={styles.logo}>{COMPANY.name}</p>
-          <p className={styles.tagline}>{COMPANY.tagline}</p>
+          <BrandLogo className={styles.logoImage} title={COMPANY.name} />
         </div>
 
         <div>

@@ -3,6 +3,7 @@ import Button from '../../components/Button';
 import { fadeUp, staggerContainer, zoomIn } from '../../utils/motionVariants';
 import { STATISTICS } from '../../data/statistics';
 import heroImage from '../../assets/images/hero-press.jpg';
+import { useContactSection } from '../../context/ContactSectionContext';
 import styles from './Hero.module.css';
 
 function Hero({
@@ -14,6 +15,7 @@ function Hero({
   image = heroImage,
   stats = [STATISTICS[2], STATISTICS[0]],
 }) {
+  const { showContactSection } = useContactSection();
   const { scrollY } = useScroll();
   // The top badge sits just below the fixed navbar. As soon as the page scrolls,
   // it starts sliding up behind the (higher stacking-order) navbar and gets visually
@@ -44,7 +46,18 @@ function Hero({
           </motion.p>
           <motion.div variants={fadeUp} className={styles.actions}>
             {primaryCta && (
-              <Button href={primaryCta.to} size="lg">
+              <Button
+                href={primaryCta.to}
+                size="lg"
+                onClick={
+                  primaryCta.to === '#contact'
+                    ? (event) => {
+                        event.preventDefault();
+                        showContactSection();
+                      }
+                    : undefined
+                }
+              >
                 {primaryCta.label}
               </Button>
             )}

@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import Button from '../../components/Button';
 import { fadeUp, staggerContainer } from '../../utils/motionVariants';
 import { scrollReveal } from '../../utils/scrollReveal';
+import { useContactSection } from '../../context/ContactSectionContext';
 import styles from './CTA.module.css';
 
 function CTA({
@@ -9,6 +10,9 @@ function CTA({
   subtitle = 'Whether you need a full brand overhaul or a stack of fresh business cards, our presses are ready.',
   cta = { label: 'Start a Project', to: '/#contact' },
 }) {
+  const { showContactSection } = useContactSection();
+  const isContactCta = cta.to === '#contact' || cta.to === '/#contact';
+
   return (
     <section className={styles.cta}>
       <motion.div className="container" variants={staggerContainer} {...scrollReveal(0.4)}>
@@ -18,7 +22,19 @@ function CTA({
             <motion.p variants={fadeUp}>{subtitle}</motion.p>
           </div>
           <motion.div variants={fadeUp}>
-            <Button href={cta.to} size="lg" variant="accent">
+            <Button
+              href={cta.to}
+              size="lg"
+              variant="accent"
+              onClick={
+                isContactCta
+                  ? (event) => {
+                      event.preventDefault();
+                      showContactSection();
+                    }
+                  : undefined
+              }
+            >
               {cta.label}
             </Button>
           </motion.div>
