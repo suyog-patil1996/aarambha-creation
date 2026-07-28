@@ -20,7 +20,7 @@
   /* Deliberately more opaque than the shared --glass-bg-strong token: this bar sits
      above scrolling page content (hero text, badges) and must fully hide it, not just
      tint it — relying on backdrop-filter blur alone isn't safe across all browsers/GPUs. */
-  background-color: rgba(255, 255, 255, 0.96);
+  background-color: #fff;
   backdrop-filter: var(--glass-blur-md);
   -webkit-backdrop-filter: var(--glass-blur-md);
   border-bottom-color: var(--glass-border);
