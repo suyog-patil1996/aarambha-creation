@@ -51,6 +51,15 @@
   font-size: var(--fs-sm);
 }
 
+.error {
+  padding: var(--space-3) var(--space-4);
+  border: var(--border-thin) solid var(--color-error);
+  border-radius: var(--radius-md);
+  background-color: rgba(220, 38, 38, 0.1);
+  color: var(--color-error);
+  font-size: var(--fs-sm);
+}
+
 @media (min-width: 768px) {
   .grid {
     gap: var(--space-12);

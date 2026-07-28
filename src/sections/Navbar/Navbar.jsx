@@ -88,7 +88,11 @@ function Navbar() {
     <header className={`${styles.navbar} ${isTransparent ? styles.transparent : styles.scrolled}`}>
       <div className={`container ${styles.inner}`}>
         <a href="/" className={styles.logo} onClick={(e) => handleNavClick(e, '/')}>
-          <BrandLogo className={styles.logoMark} title={COMPANY.name} />
+          <BrandLogo
+            className={styles.logoMark}
+            title={COMPANY.name}
+            variant={scrolled ? 'scrolled' : 'default'}
+          />
         </a>
 
         <nav className={`${styles.links} ${isOpen ? styles.linksOpen : ''}`} aria-label="Primary">
