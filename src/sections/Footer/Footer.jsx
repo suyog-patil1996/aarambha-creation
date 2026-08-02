@@ -6,6 +6,7 @@ import { gmailComposeUrl } from '../../utils/email';
 import { COMPANY } from '../../data/company';
 import { NAV_LINKS } from '../../data/navLinks';
 import BrandLogo from '../../components/BrandLogo';
+import barsImage from '../../assets/images/aarambha-bars.png';
 import styles from './Footer.module.css';
 
 const SOCIAL_ICONS = {
@@ -32,65 +33,69 @@ function Footer() {
 
   return (
     <footer className={styles.footer}>
+      <img className={styles.barRight} src={barsImage} alt="" aria-hidden="true" />
+
       <div className={`container ${styles.grid}`}>
         <div className={styles.brand}>
-          <BrandLogo className={styles.logoImage} title={COMPANY.name} />
+          <BrandLogo className={styles.logoImage} title={COMPANY.name} variant="scrolled" />
         </div>
 
-        <div>
-          <h3 className={styles.heading}>Navigate</h3>
-          <ul className={styles.linkList}>
-            {NAV_LINKS.map((link) => (
-              <li key={link.to}>
-                <a
-                  href={link.to === '/' ? '/' : `/${link.to}`}
-                  onClick={(e) => handleAnchorClick(e, link.to)}
-                >
-                  {link.label}
+        <div className={styles.linksRow}>
+          <div>
+            <h3 className={styles.heading}>Navigate</h3>
+            <ul className={styles.linkList}>
+              {NAV_LINKS.map((link) => (
+                <li key={link.to}>
+                  <a
+                    href={link.to === '/' ? '/' : `/${link.to}`}
+                    onClick={(e) => handleAnchorClick(e, link.to)}
+                  >
+                    {link.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div>
+            <h3 className={styles.heading}>Legal</h3>
+            <ul className={styles.linkList}>
+              <li>
+                <Link to="/privacy-policy">Privacy Policy</Link>
+              </li>
+              <li>
+                <Link to="/terms-and-conditions">Terms &amp; Conditions</Link>
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 className={styles.heading}>Contact</h3>
+            <ul className={`${styles.linkList} ${styles.contactList}`}>
+              <li>
+                <FiMail />
+                <a href={gmailComposeUrl(COMPANY.email)} target="_blank" rel="noopener noreferrer">
+                  {COMPANY.email}
                 </a>
               </li>
-            ))}
-          </ul>
-        </div>
-
-        <div>
-          <h3 className={styles.heading}>Legal</h3>
-          <ul className={styles.linkList}>
-            <li>
-              <Link to="/privacy-policy">Privacy Policy</Link>
-            </li>
-            <li>
-              <Link to="/terms-and-conditions">Terms &amp; Conditions</Link>
-            </li>
-          </ul>
-        </div>
-
-        <div>
-          <h3 className={styles.heading}>Contact</h3>
-          <ul className={`${styles.linkList} ${styles.contactList}`}>
-            <li>
-              <FiMail />
-              <a href={gmailComposeUrl(COMPANY.email)} target="_blank" rel="noopener noreferrer">
-                {COMPANY.email}
-              </a>
-            </li>
-            <li>
-              <FiPhone />
-              <a href={`tel:${COMPANY.phone}`}>{COMPANY.phone}</a>
-            </li>
-            <li>
-              <FaWhatsapp />
-              <a href={`https://wa.me/${COMPANY.whatsapp}`} target="_blank" rel="noopener noreferrer">
-                {COMPANY.phone}
-              </a>
-            </li>
-            <li>
-              <FiMapPin />
-              <a href={COMPANY.mapUrl} target="_blank" rel="noopener noreferrer">
-                {COMPANY.address}
-              </a>
-            </li>
-          </ul>
+              <li>
+                <FiPhone />
+                <a href={`tel:${COMPANY.phone}`}>{COMPANY.phone}</a>
+              </li>
+              <li>
+                <FaWhatsapp />
+                <a href={`https://wa.me/${COMPANY.whatsapp}`} target="_blank" rel="noopener noreferrer">
+                  {COMPANY.phone}
+                </a>
+              </li>
+              <li>
+                <FiMapPin />
+                <a href={COMPANY.mapUrl} target="_blank" rel="noopener noreferrer">
+                  {COMPANY.address}
+                </a>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
 

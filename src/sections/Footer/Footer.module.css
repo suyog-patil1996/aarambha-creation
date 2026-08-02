@@ -1,20 +1,44 @@
 .footer {
-  background-color: #510975;
-  color: var(--color-gray-300);
-  border-top: var(--border-thin) solid rgba(255, 255, 255, 0.15);
+  position: relative;
+  overflow: hidden;
+  background-color: var(--color-white);
+  color: var(--color-gray-600);
+  border-top: var(--border-thin) solid var(--color-border);
   padding-top: var(--space-24);
 }
 
+.barRight {
+  position: absolute;
+  top: var(--space-24);
+  right: 0;
+  width: clamp(70px, 8vw, 150px);
+  height: auto;
+  transform: scaleX(-1);
+  z-index: 0;
+  pointer-events: none;
+}
+
+@media (max-width: 991px) {
+  .barRight {
+    display: none;
+  }
+}
+
 .grid {
-  display: grid;
-  grid-template-columns: 1fr;
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
   gap: var(--space-12);
   padding-bottom: var(--space-20);
 }
 
 .brand {
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  align-items: flex-start;
+  flex: 0 0 auto;
 }
 
 .logoImage {
@@ -23,20 +47,32 @@
   height: auto;
 }
 
+.linksRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: clamp(2rem, 4vw, 3.5rem);
+}
+
+.linksRow > div {
+  min-width: 0;
+}
+
 .followBar {
+  position: relative;
+  z-index: 1;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   gap: var(--space-5);
   padding-block: var(--space-8);
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  border-top: 1px solid var(--color-border);
 }
 
 .followLabel {
   font-family: var(--font-heading);
   font-size: var(--fs-lg);
   font-weight: var(--fw-bold);
-  color: var(--color-text-inverse);
+  color: var(--color-gray-900);
 }
 
 .followIcons {
@@ -66,7 +102,7 @@
 }
 
 .heading {
-  color: var(--color-text-inverse);
+  color: var(--color-gray-900);
   font-family: var(--font-mono);
   font-size: var(--fs-sm);
   font-weight: var(--fw-bold);
@@ -81,20 +117,34 @@
   flex-direction: column;
   gap: var(--space-4);
   font-size: var(--fs-sm);
+  color: var(--color-gray-800);
 }
 
 .linkList a {
+  color: var(--color-gray-800);
   transition: color var(--transition-base);
 }
 
 .linkList a:hover {
-  color: var(--color-text-inverse);
+  color: var(--color-primary);
+}
+
+.contactList {
+  max-width: 260px;
 }
 
 .contactList li {
   display: flex;
   align-items: flex-start;
   gap: var(--space-3);
+}
+
+.contactList a {
+  color: var(--color-primary-dark);
+}
+
+.contactList a:hover {
+  color: var(--color-primary);
 }
 
 .contactList svg {
@@ -106,14 +156,26 @@
 }
 
 .bottomBar {
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  border-top: 1px solid var(--color-border);
   padding-block: var(--space-6);
   text-align: center;
   font-size: var(--fs-xs);
+  color: var(--color-gray-500);
 }
 
 @media (min-width: 768px) {
   .grid {
-    grid-template-columns: 1.5fr 1fr 1fr 1fr;
+    flex-wrap: nowrap;
+    gap: var(--space-16);
+  }
+}
+
+/* Reserve room on the right so content never runs under the decorative bar (visible from
+   992px up). Higher-specificity selector than the shared .container rule, so it wins
+   regardless of CSS source order. */
+@media (min-width: 992px) {
+  .footer .grid,
+  .footer .followBar {
+    padding-right: clamp(90px, 9vw, 190px);
   }
 }
